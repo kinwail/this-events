@@ -6,6 +6,21 @@
 
 
 
+var naviElem = document.querySelectorAll('.navi');
+
+
+for (var i =0;i<naviElem.length;i++ ){
+naviElem[i].addEventListener('click', showContents);
+}
+
+function showContents(){
+    var contents = this.querySelectorAll('.inner')[0];
+    if (contents.style.display === 'block'){
+        contents.style.display = 'none';
+    }else{
+        contents.style.display = 'block';
+    }
+}
 
 
 /*2) to each restaurant name that will show and hide (toggle) the secret menu item for that particular restaurant.*/
