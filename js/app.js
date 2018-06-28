@@ -42,9 +42,29 @@ function showMenu(){
     }else{
         menuContent.style.display = 'block';
     }
-
 }
 
 
 
 /*3) to the thumbs down icon that will add a count (counter) for each time the icon is clicked on.*/
+
+
+var thumbElem = document.getElementsByClassName('thumb');
+
+for (var i=0;i<thumbElem.length;i++){
+    thumbElem[i].addEventListener('click', counterClick);
+}
+
+for (var i=0;thumbElem.length;i++){
+var displayCounter = document.createElement('div');
+displayCounter.className = 'thumbsDown';
+displayCounter.innerHTML = 0;
+thumbElem[i].appendChild(displayCounter);
+}
+
+
+function counterClick(){
+    var clicky = this.querySelectorAll('.thumbsDown')[0];
+    clicky.innerHTML++;
+}
+    
